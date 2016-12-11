@@ -17,6 +17,11 @@ COPY domoapi/install.sh /root/install_domoapi.sh
 RUN chmod -f 755 /root/install_domoapi.sh
 RUN sh /root/install_domoapi.sh
 
+# Modification du sudoers
+RUN rm -f /etc/sudoers
+COPY domoapi/sudoers /etc/sudoers
+RUN chmod -f 440 /etc/sudoers
+
 # Modification de la page d accueil du serveur
 RUN rm -f /var/www/html/index.html
 COPY domoapi/index.html /var/www/html/index.html
