@@ -1,0 +1,14 @@
+app:
+  image: fwed/web-apps
+  net: "host_webapps"
+  ports:
+    - 9201:9201
+    - 9202:9202
+    - 9203:9203
+    - 9204:9204
+    - 9205:9205
+    - 9595:80
+    - 10081:10081
+  volumes:
+    - /home/ExtendHD/EbookCatalog:/home/apps/ebook/catalog
+  tty: true
