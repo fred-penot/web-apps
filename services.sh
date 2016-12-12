@@ -5,6 +5,7 @@ password_ssh=docker
 service ssh start
 service zend-server start
 service mysql start
+service telldusd start
 
 # Import des bdd de DomoApi...
 if [ -f /var/www/html/domoapi/app/doc/DomoApi.sql ]
