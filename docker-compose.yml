@@ -1,5 +1,7 @@
 app:
   image: fwed/web-apps
+  devices:
+    - "/dev/bus/usb/002/004:/dev/bus/usb/002/004"
   net: "host_webapps"
   ports:
     - 9201:9201
