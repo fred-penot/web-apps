@@ -3,11 +3,23 @@
 # VERSION               0.0.1
 #
 
-FROM     fwed/php-zs-project:holly
+FROM     fwed/php-zs-project:kaio
 MAINTAINER Fwedoz "fwedoz@gmail.com"
 
 # Definition des constantes
 ENV login_ssh="docker"
+
+# Ajout du depot pour la cle TellStick
+RUN echo 'deb http://download.telldus.com/debian/ stable main' | tee /etc/apt/sources.list.d/telldus.list
+RUN wget http://download.telldus.se/debian/telldus-public.key -O- | apt-key add -
+RUN apt-get update
+RUN apt-get install -y -q telldus-core
+
+# Ajout de la configuration de la cle TellStick 
+RUN rm -f /etc/tellstick.conf
+COPY domoapi/tellstick.conf /etc/tellstick.conf
+RUN chmod -f 664 /etc/tellstick.conf
+RUN chown root:plugdev /etc/tellstick.conf
 
 # Installation des paquets
 RUN apt-get install -y -q git mediainfo
