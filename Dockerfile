@@ -10,13 +10,13 @@ MAINTAINER Fwedoz "fwedoz@gmail.com"
 ENV login_ssh="docker"
 
 # Telechargement et installation de symfony 3 + projet de base
-COPY domoapi/install.sh /root/install_sf3.sh
+COPY install_sf3.sh /root/install_sf3.sh
 RUN chmod -f 755 /root/install_sf3.sh
 RUN sh /root/install_sf3.sh
 
 # Modification de la page d accueil du serveur
 RUN rm -f /var/www/html/index.html
-COPY domoapi/index.html /var/www/html/index.html
+COPY index.html /var/www/html/index.html
 RUN chmod -f 755 /var/www/html/index.html
 
 # Modification de services.sh
