@@ -26,6 +26,3 @@ RUN chmod -f 755 /root/services.sh
 
 # Ports
 EXPOSE 9301 8000
-
-# Point de montage
-VOLUME ["/home"]
