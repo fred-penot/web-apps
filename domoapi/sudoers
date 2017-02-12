@@ -24,8 +24,8 @@ root	ALL=(ALL:ALL) ALL
 
 # Allow members of group sudo to execute any command
 %sudo	ALL=(ALL:ALL) ALL
-www-data ALL=(ALL) NOPASSWD:/sbin/reboot,/etc/init.d/apache2 stop,/etc/init.d/apache2 restart,/etc/init.d/ssh stop,/etc/init.d/ssh start,/etc/init.d/ssh restart,/etc/init.d/mysql restart,/home/docker/domoapi/app/script/freeMemory.sh
-docker ALL=(ALL) NOPASSWD:/home/docker/domoapi/app/script/freeMemory.sh
+www-data ALL=(ALL) NOPASSWD:/sbin/reboot,/etc/init.d/apache2 stop,/etc/init.d/apache2 restart,/etc/init.d/ssh stop,/etc/init.d/ssh start,/etc/init.d/ssh restart,/etc/init.d/mysql restart,/home/apps/domoapi/app/script/freeMemory.sh
+docker ALL=(ALL) NOPASSWD:/home/apps/domoapi/app/script/freeMemory.sh
 
 # See sudoers(5) for more information on "#include" directives:
 
