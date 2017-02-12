@@ -8,20 +8,20 @@ service mysql start
 service telldusd start
 
 # Import des bdd de DomoApi...
-if [ -f /home/docker/domoapi/app/doc/DomoApi.sql ]
+if [ -f /home/apps/domoapi/app/doc/DomoApi.sql ]
 then
-	mysql -u root -p${password_mysql} < /home/docker/domoapi/app/doc/DomoApi.sql
-	rm -f /home/docker/domoapi/app/doc/DomoApi.sql
+	mysql -u root -p${password_mysql} < /home/apps/domoapi/app/doc/DomoApi.sql
+	rm -f /home/apps/domoapi/app/doc/DomoApi.sql
 fi
 
 # ... et de HomeOS
-if [ -f /home/docker/domoapi/app/doc/HomeOS.sql ]
+if [ -f /home/apps/domoapi/app/doc/HomeOS.sql ]
 then
-	mysql -u root -p${password_mysql} < /home/docker/domoapi/app/doc/HomeOS.sql
-	rm -f /home/docker/domoapi/app/doc/HomeOS.sql
+	mysql -u root -p${password_mysql} < /home/apps/domoapi/app/doc/HomeOS.sql
+	rm -f /home/apps/domoapi/app/doc/HomeOS.sql
 fi
 
-chmod -Rf 777 /home/docker/domoapi
+chmod -Rf 777 /home/apps/domoapi
 
 # Suppresion des fichiers temporaires de DomoApi
-rm -Rf /home/docker/domoapi/app/doc/*
+rm -Rf /home/apps/domoapi/app/doc/*
